@@ -1,0 +1,1 @@
+# LCE0212---Estat-stica-Aplicada-s-Ci-ncias-dos-Alimentos
