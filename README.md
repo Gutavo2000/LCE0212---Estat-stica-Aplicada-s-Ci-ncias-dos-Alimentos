@@ -8,7 +8,7 @@
 
 ## Arquivos
 
-* `tarefa13\\\\\\\_Python\\\\\\\_Ciencias\\\\\\\_dos\\\\\\\_Alimentos.ipynb`: notebook com pesquisa teórica, fórmulas, gráficos de parâmetros, probabilidades e áreas sombreadas.
+* `tarefa13_Python_Ciencias_dos_Alimentos_Grupo7.ipynb`: notebook com pesquisa teórica, fórmulas, gráficos de parâmetros, probabilidades e áreas sombreadas.
 * A base Wine Quality é baixada automaticamente da UCI quando o notebook é executado; se isso falhar, consulte as instruções abaixo.
 
 ## Base de dados
