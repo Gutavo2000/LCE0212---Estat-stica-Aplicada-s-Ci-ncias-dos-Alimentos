@@ -34,5 +34,3 @@ Cada linha representa uma amostra de vinho com características físico-química
 * SciPy — qui-quadrado: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2.html
 * SciPy — F de Fisher: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.f.html
 * NIST/SEMATECH e-Handbook: https://www.itl.nist.gov/div898/handbook/
-
-**Antes de entregar:** substitua os campos de integrantes, execute todas as células, confira os gráficos e res
