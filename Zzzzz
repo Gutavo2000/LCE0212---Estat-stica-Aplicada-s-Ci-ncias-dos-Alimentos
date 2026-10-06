@@ -1,0 +1,306 @@
+Quero que você crie um notebook completo em Python, compatível com Google Colab, para uma atividade da disciplina LCE0212 – Estatística Aplicada às Ciências dos Alimentos, da ESALQ/USP.
+
+Meu grupo é o GRUPO 7 e nossa situação-problema é sobre o pH de um produto alimentício utilizando a Distribuição Normal.
+
+Dados do problema
+
+Durante o controle de qualidade de determinado produto alimentício, o pH pode ser representado por uma distribuição Normal com:
+
+- Média: μ = 4,20
+- Desvio-padrão: σ = 0,15
+- Variável aleatória X = pH de uma unidade selecionada aleatoriamente
+
+Portanto:
+
+X ~ N(4,20 ; 0,15²)
+
+Objetivo
+
+Crie um notebook didático, organizado e visualmente adequado para entrega acadêmica.
+
+O notebook deve alternar entre células Markdown, explicando o raciocínio estatístico, e células de código Python realizando os cálculos e gerando os gráficos.
+
+Utilize principalmente:
+
+- numpy
+- matplotlib.pyplot
+- scipy.stats
+- scipy.stats.norm
+
+Não utilize valores inventados além dos fornecidos no problema.
+
+Estrutura obrigatória
+
+1. Título e identificação
+
+Criar uma célula Markdown com:
+
+Distribuição Normal aplicada à Ciência dos Alimentos
+
+Grupo 7 – pH de um produto alimentício
+
+Disciplina: LCE0212 – Estatística Aplicada às Ciências dos Alimentos
+
+Deixe também um espaço para colocar os nomes dos integrantes do grupo.
+
+---
+
+2. Contextualização
+
+Explique brevemente por que a distribuição Normal pode ser utilizada para representar variáveis quantitativas contínuas em Ciência dos Alimentos e como ela pode auxiliar no controle de qualidade.
+
+Apresente o contexto do exercício:
+
+"O pH de determinado produto durante o controle de qualidade pode ser representado por uma distribuição Normal com média 4,20 e desvio-padrão 0,15."
+
+Explique que X representa o pH de uma unidade selecionada aleatoriamente.
+
+---
+
+3. Questão 1 – Distribuição de probabilidade
+
+Responder:
+
+"Escreva a distribuição de probabilidade de X e identifique seus parâmetros."
+
+Apresentar matematicamente:
+
+X ~ N(μ = 4,20 ; σ² = 0,15²)
+
+Identificar:
+
+μ = 4,20
+σ = 0,15
+σ² = 0,0225
+
+Explique brevemente o significado da média e do desvio-padrão nesse contexto.
+
+---
+
+4. Questão 2 – Probabilidade de pH ≤ 4,00
+
+Calcular:
+
+P(X ≤ 4,00)
+
+Antes do código, mostrar a notação probabilística.
+
+Calcular também o escore padronizado:
+
+Z = (4,00 - 4,20) / 0,15
+
+Depois calcular a probabilidade em Python utilizando:
+
+norm.cdf()
+
+Mostrar o resultado:
+
+- em forma decimal;
+- em porcentagem;
+- com pelo menos 4 casas decimais.
+
+Depois escrever uma interpretação do resultado no contexto do controle de qualidade do produto.
+
+Não apresentar apenas o número. Explicar o que a probabilidade significa.
+
+---
+
+5. Questão 3 – Probabilidade entre 4,00 e 4,40
+
+Calcular:
+
+P(4,00 ≤ X ≤ 4,40)
+
+Mostrar que:
+
+P(4,00 ≤ X ≤ 4,40)
+= P(X ≤ 4,40) - P(X ≤ 4,00)
+
+Utilizar "norm.cdf()".
+
+Mostrar o resultado decimal e percentual.
+
+Depois escrever uma interpretação clara no contexto do pH do produto.
+
+---
+
+6. Questão 4 – Gráficos das probabilidades
+
+Criar DOIS gráficos separados.
+
+Gráfico 1
+
+Representar:
+
+P(X ≤ 4,00)
+
+Requisitos:
+
+- curva da distribuição Normal;
+- eixo X representando o pH;
+- eixo Y representando a densidade de probabilidade;
+- linha vertical indicando pH = 4,00;
+- linha vertical ou indicação da média μ = 4,20;
+- preencher/sombrear somente a região X ≤ 4,00;
+- título explicativo;
+- legenda;
+- grade discreta;
+- boa resolução.
+
+Gráfico 2
+
+Representar:
+
+P(4,00 ≤ X ≤ 4,40)
+
+Requisitos:
+
+- curva Normal;
+- linhas verticais em 4,00 e 4,40;
+- indicar a média 4,20;
+- preencher/sombrear somente a região entre 4,00 e 4,40;
+- título;
+- legenda;
+- eixos identificados;
+- grade discreta.
+
+Use "numpy.linspace()", "norm.pdf()" e "matplotlib.pyplot.fill_between()" para construir os gráficos.
+
+Os gráficos devem ficar visualmente claros e apropriados para apresentação acadêmica.
+
+---
+
+7. Questão 5 – Percentis 90, 95 e 99
+
+Determinar:
+
+P90
+P95
+P99
+
+Utilizar:
+
+norm.ppf()
+
+Calcular:
+
+x90 = norm.ppf(0.90, loc=4.20, scale=0.15)
+x95 = norm.ppf(0.95, loc=4.20, scale=0.15)
+x99 = norm.ppf(0.99, loc=4.20, scale=0.15)
+
+Apresentar os resultados com pelo menos 3 casas decimais.
+
+Criar também uma pequena tabela usando pandas contendo:
+
+Percentil | Probabilidade acumulada | Valor de pH
+
+90 | 0,90 | valor calculado
+95 | 0,95 | valor calculado
+99 | 0,99 | valor calculado
+
+---
+
+8. Questão 6 – Interpretação do percentil 90
+
+Escrever uma interpretação completa em linguagem acadêmica, porém simples.
+
+A interpretação deve explicar que aproximadamente 90% das unidades apresentam pH menor ou igual ao valor correspondente ao percentil 90, enquanto aproximadamente 10% apresentam valores superiores.
+
+Relacionar explicitamente a interpretação ao controle de qualidade do produto alimentício.
+
+---
+
+9. Questão 7 – Percentil 99 e comparação com o percentil 90
+
+Interpretar o percentil 99.
+
+Explicar que aproximadamente 99% das unidades apresentam pH menor ou igual ao valor encontrado.
+
+Depois comparar P90 e P99.
+
+Explique claramente:
+
+- qual deles apresenta maior valor de pH;
+- por que o P99 está mais distante da média;
+- o que significa passar de 90% para 99% de probabilidade acumulada;
+- como isso aparece na cauda direita da distribuição Normal.
+
+Não quero apenas uma definição matemática. Quero uma interpretação aplicada à situação do produto alimentício.
+
+---
+
+10. Questão 8 – Gráfico dos percentis
+
+Criar um gráfico da distribuição Normal indicando simultaneamente:
+
+- média μ = 4,20;
+- P90;
+- P95;
+- P99.
+
+Utilizar linhas verticais diferentes para cada percentil.
+
+Cada linha deve possuir uma legenda mostrando:
+
+P90 = valor
+P95 = valor
+P99 = valor
+
+O gráfico deve possuir:
+
+- título;
+- eixo X = pH;
+- eixo Y = densidade de probabilidade;
+- legenda;
+- grade discreta;
+- boa resolução.
+
+O intervalo do eixo X deve ser suficientemente amplo para visualizar a distribuição e os três percentis.
+
+---
+
+11. Resumo dos resultados
+
+No final, criar uma tabela com todos os principais resultados:
+
+Medida| Resultado
+Média| 4,20
+Desvio-padrão| 0,15
+P(X ≤ 4,00)| resultado
+P(4,00 ≤ X ≤ 4,40)| resultado
+Percentil 90| resultado
+Percentil 95| resultado
+Percentil 99| resultado
+
+Depois da tabela, escrever uma conclusão curta interpretando os resultados no contexto do controle de qualidade de alimentos.
+
+---
+
+Requisitos importantes
+
+1. O notebook precisa funcionar integralmente no Google Colab.
+2. Separe claramente células Markdown e células de código.
+3. Antes de cada cálculo, explique o que será calculado.
+4. Depois de cada cálculo, apresente uma interpretação.
+5. Não apresente apenas respostas numéricas.
+6. Mostre a notação probabilística utilizada.
+7. Utilize "scipy.stats.norm" para probabilidades e percentis.
+8. Utilize "matplotlib" para os gráficos.
+9. Todos os gráficos devem possuir título, nomes dos eixos e legenda.
+10. Mostre os resultados tanto em decimal quanto em porcentagem quando se tratar de probabilidades.
+11. Utilize comentários no código explicando as etapas importantes.
+12. Evite códigos excessivamente complexos; o notebook deve parecer um trabalho realizado por estudantes de graduação em Ciências dos Alimentos.
+13. Não invente dados ou novas questões.
+14. Não pule nenhuma das 8 questões.
+15. As interpretações devem ser específicas para pH e controle de qualidade de alimentos.
+16. Confira matematicamente todos os resultados antes de finalizar.
+
+IMPORTANTE: entregue o conteúdo na ordem exata em que deve aparecer no Google Colab, indicando claramente:
+
+[CÉLULA MARKDOWN]
+
+e
+
+[CÉLULA DE CÓDIGO]
+
+para que eu consiga copiar cada parte diretamente para o notebook.
